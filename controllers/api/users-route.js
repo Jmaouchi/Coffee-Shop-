@@ -80,12 +80,58 @@ router.post('/', (req, res) => {
     email: req.body.email,
     password: req.body.password
   })
-    .then(dbUserData => res.json(dbUserData))
+    .then(dbUserData => {
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.loggedIn = true;
+    
+        res.json(dbUserData);
+      });
+    })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
 });
+
+
+router.post('/login', (req, res) => {
+
+  User.findOne({
+    where: {
+      email: req.params.email,
+    }
+  }).then(dbUserData => {
+    if (!dbUserData) {
+      res.status(400).json({ message: 'No user with that email address!' });
+      return;
+    }
+    //since the password is hashed, we can not check it, cause it will be different in the database
+    // what we need to id is to run a function called checkPasswod and then call  bcrypt.compareSync method to hash the password and then compare
+    // it, if its the same, then login 
+    // this function is in the user table 
+    const validPassword = dbUserData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res.status(400).json({ message: 'Incorrect password!' });
+      return;
+    }
+    // This gives our server easy access to the user's user_id, username, and a Boolean describing whether or not the user is logged in
+    // we always need to create our sessoin before we send a response back 
+    req.session.save(() => {
+      // declare session variables
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      // this will set in you client side as a cookie and it will check if you logged in or not 
+      req.session.loggedIn = true;
+
+      res.render('login');
+    });
+  });
+
+
+} )
 
 
 // delete data from the user table 
