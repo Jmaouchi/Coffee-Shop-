@@ -1,7 +1,8 @@
 
   <header class="header">
+
       <a href="#" class="logo">
-        <img src="/images/logo.png" alt="">
+        <img src="./img/logo.png" alt="">
       </a>
 
       <nav class="navbar">
@@ -22,6 +23,24 @@
       <div class="search-form">
         <input type="search" id="search-box" placeholder="search here...">
         <label for="search-box" class="fas fa-search"></label>
+      </div>
+      
+
+      {{!-- Kevin! this is where the items will go, you just need to change the cart item h3 and the price with the exact data --}}
+      {{!-- and you need to add the #each methode to display all the items that are selected  --}}
+      <div class="cart-items-container" id="cart-items-container">
+        <div class="cart-item" id="cart-item item-one">
+          <img src="/images/cart-item-1.png" alt="">
+          <div class="content">
+            <h3>cart item 01</h3>
+            <div class="price">$15.99</div>
+          </div>
+          <span class="fas fa-times" ></span>
+        </div>
+
+        <ul class="ul" id="add-list"></ul>
+
+        <a href="#" class="btn" id="btn">Checkout here</a>
       </div>
       
    </header>   
