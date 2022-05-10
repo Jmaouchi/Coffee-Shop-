@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
   });
 });
 
-router.get('/he', (req, res) => {
+router.get('/login', (req, res) => {
 
   User.findAll({
     // exclude password
