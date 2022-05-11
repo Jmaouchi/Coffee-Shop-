@@ -35,9 +35,19 @@ const seeReview = document.querySelector('.random-btn-see');
 const row = document.querySelector('.first-row');
 
 seeReview.addEventListener('click', function(){
-    row.classList.toggle('active')
+    row.classList.toggle('active');
+    form.classList.remove('active')
 })
 
+
+// This function will allow you to unhide the div where you can add a review and hide the reviews, when you click on the add all reviews button
+const addReview = document.querySelector('.random-btn-add');
+const form = document.querySelector('.form-review');
+
+addReview.addEventListener('click', () => {
+    form.classList.toggle('active');
+    row.classList.remove('active')
+})
 
 
 
