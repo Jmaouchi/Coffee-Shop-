@@ -20,7 +20,7 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace('/html/users')
+      document.location.replace('/html')
     } else {
       alert(response.statusText);
     }
@@ -51,7 +51,7 @@ async function signupFormHandler(event) {
 
     if (response.ok) {
       // after the account is been created, reffer them to another page 
-      document.location.replace('/')
+      document.location.replace('/login')
     } else {
       alert(response.statusText);
     }

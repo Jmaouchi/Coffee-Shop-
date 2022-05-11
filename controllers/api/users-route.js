@@ -18,35 +18,6 @@ router.get('/', (req, res) => {
 });
 
 
-// check the users login infos
-router.post('/login', (req, res) => {
-  User.findOne({
-
-    where: {
-      email: req.body.email
-    }
-    
-  }).then(dbUserData => {
-    if (!dbUserData) {
-      res.status(400).json({ message: 'No user with that email address!' });
-      return;
-    }
-    //since the password is hashed, we can not check it, cause it will be different in the database
-    // what we need to id is to run a function called checkPasswod and then call  bcrypt.compareSync method to hash the password and then compare
-    // it, if its the same, then login 
-    // this function is in the user table 
-    const validPassword = dbUserData.checkPassword(req.body.password);
-
-    if (!validPassword) {
-      res.status(400).json({ message: 'Incorrect password!' });
-      return;
-    }
-
-    // this will send them a message that they are logged in and the a json data that only has a user name 
-    res.json({ user: dbUserData.username , message: 'You are now logged in!' });
-  });
-});
-
 
 // find a user by id 
 router.get('/:id', (req, res) => { 
@@ -72,7 +43,7 @@ router.get('/:id', (req, res) => {
 
 
 
-// post data 
+// post data to create a new user or signup
 router.post('/', (req, res) => {
   // in a post its always a create method that we need to use 
   User.create({
@@ -96,12 +67,14 @@ router.post('/', (req, res) => {
 });
 
 
+// check the users login infos
 router.post('/login', (req, res) => {
-
   User.findOne({
+
     where: {
-      email: req.params.email,
+      email: req.body.email
     }
+    
   }).then(dbUserData => {
     if (!dbUserData) {
       res.status(400).json({ message: 'No user with that email address!' });
@@ -126,12 +99,26 @@ router.post('/login', (req, res) => {
       // this will set in you client side as a cookie and it will check if you logged in or not 
       req.session.loggedIn = true;
 
-      res.render('login');
+    res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
   });
+});
 
+// destroy the session to logout from the page
+router.post('/logout', (req, res) => {
 
-} )
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      // the 204 response means that the session has successfully been destroyed.
+      res.status(204).end();
+    });
+  }
+  else {
+    res.status(404).end();
+  }
+
+});
+
 
 
 // delete data from the user table 
@@ -178,10 +165,6 @@ router.put('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
-
-
-
 
 
 

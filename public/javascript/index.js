@@ -1,4 +1,4 @@
-// start with the navbar whenwver the screen is at 991px
+// start with the navbar whenever the screen is at 991px
 let navbar = document.querySelector('.navbar');
 
 

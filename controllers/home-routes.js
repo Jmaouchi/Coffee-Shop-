@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models')
+const { User } = require('../models')
 
 router.get('/', (req, res) => {
 
@@ -18,6 +18,8 @@ router.get('/', (req, res) => {
     res.status(500).json(err);
   });
 });
+
+
 
 router.get('/login', (req, res) => {
 
