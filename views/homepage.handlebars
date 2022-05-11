@@ -1,6 +1,13 @@
 
   <header class="header">
+     
+
       <div class="flex">
+        {{!-- <select name="" id="">
+          <option disabled selected>Select Here</option>
+          <option value="Delete">Delete account</option>
+        </select> --}}
+
         <a href="#" class="logo">
           <img src="/images/logo.png" alt="">
         </a>
@@ -8,6 +15,7 @@
         <div class="logout" id="logout">
           <p>logout</p>
         </div>
+
       </div>  
     
       <nav class="navbar">
@@ -209,36 +217,32 @@
 
     <!-- reviews section starts -->
     <main id="reviews" class="reviews">
-      <h1 class="heading"><span>ourt</span>Products</h1>
+      <h1 class="heading"><span>ourt</span>Reviews</h1>
       <div class="container">
 
-        <div class="first-review">       
-            <article class="reviews">
-              <div class="img-container">
-                <img src="/images/menu-1.png" alt="" id="person-img">
-              </div>
-
-              <h2 id=  "author"></h2>
-              <p class="reviews-first-p" id="job">   
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio consectetur explicabo accusamus? Saepe, cupiditate aut.
-              </p>
-              <p class="reviews-second-p" id="info">  
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae consequatur earum nihil. Modi, excepturi consequatur.
-              </p>
-
-              <div class="button-container">
-                <button class="prev-btn">
-                  <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="next-btn">
-                  <i class="fas fa-chevron-right"></i>
-                </button>
-              </div>
-              <!-- random button -->
-              <button class="random-btn">surprise me</button>
-            </article>
+        <div class="">
+          <button class="random-btn-add">Add Your review</button>
+           <button class="random-btn-see">See all Reviews</button>
         </div>
 
+        <div class="row first-row">       
+          <div class="col">
+            <article class="reviews">
+                      <h2 id=  "author">author name</h2>
+                      <p class="reviews-first-p" id="job">   
+                        author comment will go here
+                      </p>
+
+                      <p>
+                        commented when and at what time 
+                      </p>              
+            </article>
+          </div>
+
+          
+        
+        </div>
+        
       </div>
 
     </main>

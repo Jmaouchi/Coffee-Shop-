@@ -56,6 +56,33 @@ html::-webkit-scrollbar-thumb{
   border-radius: 5rem;
 }
 
+/* select{
+  margin-right: 10px;
+  padding: 3px 5px;
+  font-size: 13px;
+  background-color: #ccc;
+  border:  1px solid var(--main-color);
+  border-radius:  5px;
+  
+  take off the default style */
+  /* appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+} */
+/* 
+select:hover{
+  outline: none;
+  background-color: var(--main-color);
+}
+
+
+select option{
+  color: black;
+  font-size: 15px;
+  width: 100%;
+} */
+
+
 .btn{
   margin-top: 1rem;
   display: inline-block;
@@ -484,6 +511,10 @@ main .container{
   position: relative;
 }
 
+.first-row{
+  margin-top: 50px;
+}
+
 .reviews h2{
   font-size: 25px;
   color: white;
@@ -507,29 +538,14 @@ main .container{
 }
 
 
-
-.prev-btn,
-.next-btn {
-  color:white;
-  font-size: 1.25rem;
-  background: transparent;
-  border-color: transparent;
-  margin: 0 0.5rem;
-  transition: var(--transition);
-  cursor: pointer;
-}
-
-.prev-btn:hover,
-.next-btn:hover {
-  color: orange;
-}
-.random-btn {
+.random-btn-add, .random-btn-see {
   margin-top: 16px;
-  background: orange;
-  color: white;
+  font-size: 23px;
+  background: var(--main-color);
+  color: var(--black);
   padding: 10px;
   text-transform: capitalize;
-  border-radius: 50px;
+  border-radius: 5px;
   cursor: pointer;
 }
 .random-btn:hover {
@@ -537,6 +553,13 @@ main .container{
   color: black;
 }
 
+.first-row{
+  display: none;
+}
+
+.first-row.active{
+  display: inline;
+}
 
 
 /* login page css start here */
@@ -552,11 +575,10 @@ section{
   min-height: 80vh;
 }
 
-.col{
+.col-all{
   margin: 5px;
   border: 1px solid var(--main-color);
 }
-
 
 #col-1{
   width: 100%;
