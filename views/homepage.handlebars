@@ -237,7 +237,11 @@
             <article class="reviews">
               <h2 id=  "author">author name</h2>
               <p class="reviews-first-p" id="job">   
-                author comment will go here <span> and created at Created at </span>
+                  {{#each reviews as |review|}}
+                    <li>
+                    {{> review-info review }}
+                    </li>
+                  {{/each}}
               </p>              
             </article>
           </div>
@@ -249,4 +253,5 @@
 
     <script src="/javascript/index.js" ></script>
     <script src="/javascript/logout.js"></script>
+    <script src="/javascript/review-page.js"></script>
   

@@ -1,17 +1,29 @@
-// in this case, we also have a method that will save the session.
-async function signupFormHandler(event) {
+async function reviewFormHandler(event) {
   event.preventDefault();
 
+  const review_text = document.querySelector('textarea[name="review-body"]').value.trim();
+  const post_id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];
+
+  if (review_text) {
+    const response = await fetch('/api/comments', {
+      method: 'POST',
+      body: JSON.stringify({
+        review_id,
+        review_text
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
 
     if (response.ok) {
-      // after the account is been created, reffer them to another page 
-      document.location.replace('/html/login')
+      document.location.reload();
     } else {
       alert(response.statusText);
     }
   }
+}
 
-
-
-
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+document.querySelector('.review-form').addEventListener('submit', reviewFormHandler);

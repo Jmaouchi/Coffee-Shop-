@@ -4,12 +4,10 @@ const router = require('express').Router();
 const apiRoutes = require('./api');
 const htmlRoutes = require('./home-routes');
 const loginRoutes = require('./login-route');
-const reviewsRoutes = require('./reviews-route');
 
 router.use('/api', apiRoutes);
 router.use('/html', htmlRoutes);
 router.use('/login', loginRoutes);
-router.use('/review', reviewsRoutes);
 
 
 router.use((req, res) => {
