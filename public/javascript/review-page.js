@@ -9,8 +9,8 @@ async function signupFormHandler(event) {
     } else {
       alert(response.statusText);
     }
-  }
-}
+  };
+
 
 
 
