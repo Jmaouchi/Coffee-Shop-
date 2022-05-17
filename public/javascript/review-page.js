@@ -1,29 +1,22 @@
-async function reviewFormHandler(event) {
+// in this case, we also have a method that will save the session.
+async function signupFormHandler(event) {
   event.preventDefault();
-
-  const review_text = document.querySelector('textarea[name="review-body"]').value.trim();
-  const post_id = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1
-  ];
-
+  const review_text = document.querySelector('#Textarea1').value.trim();
   if (review_text) {
-    const response = await fetch('/api/comments', {
-      method: 'POST',
+    // post the data to this endpoint to create an account, and in the backend it will be the another post to post the data to the database with a create methode
+    const response = await fetch('/api/reviews', {
+      method: 'post',
       body: JSON.stringify({
-        review_id,
-        review_text
+        review_text,
       }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
+      headers: { 'Content-Type': 'application/json' }
     });
-
     if (response.ok) {
-      document.location.reload();
+      // after the account is been created, reffer them to another page
+      document.location.replace('/html')
     } else {
       alert(response.statusText);
     }
   }
 }
-
-document.querySelector('.review-form').addEventListener('submit', reviewFormHandler);
+document.getElementById('submit-review').addEventListener('click', signupFormHandler)

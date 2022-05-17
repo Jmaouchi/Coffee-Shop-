@@ -7,6 +7,6 @@ const reviewsRoutes = require('./reviews-route');
 
 // use this router that starts with /users then the end of this endpoint will be in the api routes 
 router.use('/users', userRoutes);
-router.use('/review-page', reviewsRoutes);
+router.use('/reviews', reviewsRoutes);
 
 module.exports = router;
