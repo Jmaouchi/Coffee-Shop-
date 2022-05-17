@@ -1,20 +1,37 @@
-// create a connection to database
+// // create a connection to database
+// const Sequelize = require('sequelize');
+
+// // use dotenv to hide the database name,  username and password 
+// require('dotenv').config();
+
+// let sequelize;
+
+// if (process.env.JAWSDB_URL) {
+//   sequelize = new Sequelize(process.env.JAWSDB_URL);
+// } else {
+//   sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
+//     host: 'localhost',
+//     dialect: 'mysql',
+//     port: 3306
+//   });
+// }
+
+// // export sequelize
+// module.exports = sequelize;
+
+// Import the sequelize constructor
 const Sequelize = require('sequelize');
 
-// use dotenv to hide the database name,  username and password 
 require('dotenv').config();
 
-let sequelize;
+// create connection to the db on Heroku
+const sequelize = process.env.JAWSDB_URL
+    ? new Sequelize(process.env.JAWSDB_URL)
+    : new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
+        host: 'localhost',
+        dialect: 'mysql',
+        port: 3306
+    });
 
-if (process.env.JAWSDB_URL) {
-  sequelize = new Sequelize(process.env.JAWSDB_URL);
-} else {
-  sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
-    host: 'localhost',
-    dialect: 'mysql',
-    port: 3306
-  });
-}
-
-// export sequelize
 module.exports = sequelize;
+
