@@ -20,6 +20,7 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
+      alert( message: You are now registered with us, please login with the form on the left )
       document.location.replace('/')
     } else {
       alert(response.statusText);
