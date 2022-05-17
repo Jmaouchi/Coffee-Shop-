@@ -3,7 +3,7 @@ const router = require('express').Router();
 //get all the routes from the api folder 
 const apiRoutes = require('./api');
 const htmlRoutes = require('./home-routes');
-const loginRoutes = require('./login-route')
+const loginRoutes = require('./login-route');
 
 router.use('/api', apiRoutes);
 router.use('/', htmlRoutes);
