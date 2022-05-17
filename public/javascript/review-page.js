@@ -13,7 +13,7 @@ async function signupFormHandler(event) {
     });
     if (response.ok) {
       // after the account is been created, reffer them to another page
-      document.location.replace('/html')
+      document.location.replace('/')
     } else {
       alert(response.statusText);
     }

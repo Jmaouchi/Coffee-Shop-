@@ -20,7 +20,7 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace('/html')
+      document.location.replace('/')
     } else {
       alert(response.statusText);
     }
