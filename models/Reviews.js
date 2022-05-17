@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connetcion');
+const sequelize = require('../config/connection');
 // create our User model
 class Review extends Model {
 }
@@ -33,8 +33,3 @@ Review.init(
   }
 );
 module.exports = Review;
-
-
-
-
-

@@ -12,24 +12,11 @@ async function signupFormHandler(event) {
       headers: { 'Content-Type': 'application/json' }
     });
     if (response.ok) {
-<<<<<<< HEAD
-      // after the account is been created, reffer them to another page 
-=======
       // after the account is been created, reffer them to another page
->>>>>>> 44501217e46784a57c9f739d72705de3386c106a
       document.location.replace('/')
     } else {
       alert(response.statusText);
     }
-<<<<<<< HEAD
-  };
-
-
-
-
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-=======
   }
 }
 document.getElementById('submit-review').addEventListener('click', signupFormHandler)
->>>>>>> 44501217e46784a57c9f739d72705de3386c106a
