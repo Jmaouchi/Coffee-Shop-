@@ -11,7 +11,7 @@
     <div class="col col-lg-8 col-sm-12 col-all" id="col-1">
       <!-- our logo  -->
       <div class="logo context">
-        <img src="/images/logo.png" alt="" >
+        <img src="/images/logo.png" alt=""  id="logo-image">
       </div>
 
       <!-- first heading  -->
@@ -23,7 +23,7 @@
       
       <!-- sign in button -->
       <form class="login-form">
-        <div class="login context">
+        <div class="login-context context">
           <div>
             <label for="email-login" class="user">email:</label>
             <input class="user-input" type="text" id="email-login">
@@ -40,27 +40,29 @@
     </div>
 
     <!-- seconnd col start here -->
-    <div class="col col-lg-3 col-sm-12 col-md-5 col-all" id="col-2">
-      <h3>
+    <div class="col col-lg-3 col-sm-12 col-all" id="col-2">
+      <h3 class="create-h3">
         Create Account 
       </h3>
 
       <form class="signup-form">
-        <div>
-          <label for="username-signup" class="user">username <i class="fa-solid fa-user"></i></label>
-          <input class="user-signup"  type="text" id="username-signup" placeholder="add username" />
-        </div>
-        <div>
-          <label for="email-signup"  class="user" >email <i class="fa-solid fa-at"></i></label>
-          <input class="user-signup" type="text" id="email-signup" placeholder="add email" />
-        </div>
-        <div>
-          <label for="password-signup"  class="user">password <i class="fa-solid fa-lock"></i></label>
-          <input class="user-signup" type="password" id="password-signup"  placeholder="add password"/>
-        </div>
-        <div>
-          <button type="submit" class="btn-signup">signup <i class="fa-solid fa-right-to-bracket"></i></button>
-        </div>
+        <div class="context">
+          <div>
+            <label for="username-signup" class="user">username <i class="fa-solid fa-user"></i></label>
+            <input class="user-signup"  type="text" id="username-signup" placeholder="add username" />
+          </div>
+          <div>
+            <label for="email-signup"  class="user" >email <i class="fa-solid fa-at"></i></label>
+            <input class="user-signup" type="text" id="email-signup" placeholder="add email" />
+          </div>
+          <div>
+            <label for="password-signup"  class="user">password <i class="fa-solid fa-lock"></i></label>
+            <input class="user-signup" type="password" id="password-signup"  placeholder="add password"/>
+          </div>
+          <div>
+            <button type="submit" class="btn-signup">signup <i class="fa-solid fa-right-to-bracket"></i></button>
+          </div>
+        </div>  
       </form>
     </div>
     
