@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { User, Review } = require('../../models')
-
 // get all users
 router.get('/', (req, res) => {
     console.log('======================');
@@ -94,6 +93,5 @@ router.delete('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
 
 module.exports = router;

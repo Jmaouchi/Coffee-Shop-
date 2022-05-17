@@ -20,12 +20,13 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace('/html')
+      alert( message: You are now registered with us, please login with the form on the left )
+      document.location.replace('/')
     } else {
       alert(response.statusText);
     }
   }
-}
+};
 
 
 // this fetch will send some data to the /api/users endpoint and then in the backend there is another post method to create a new user.
@@ -51,12 +52,12 @@ async function signupFormHandler(event) {
 
     if (response.ok) {
       // after the account is been created, reffer them to another page 
-      document.location.replace('/html/login')
+      document.location.replace('/login')
     } else {
       alert(response.statusText);
     }
   }
-}
+};
 
 
 

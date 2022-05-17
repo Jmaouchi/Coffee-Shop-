@@ -13,16 +13,12 @@ async function signupFormHandler(event) {
       }),
       headers: { 'Content-Type': 'application/json' }
     });
-
     if (response.ok) {
-      // after the account is been created, reffer them to another page 
-      document.location.replace('/html')
+      // after the account is been created, reffer them to another page
+      document.location.replace('/')
     } else {
       alert(response.statusText);
     }
-  }
-}
 
+  };
 
-
-document.getElementById('submit-review').addEventListener('click', signupFormHandler)
