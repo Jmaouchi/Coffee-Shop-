@@ -1,9 +1,7 @@
 // in this case, we also have a method that will save the session.
 async function signupFormHandler(event) {
   event.preventDefault();
-
   const review_text = document.querySelector('#Textarea1').value.trim();
-
   if (review_text) {
     // post the data to this endpoint to create an account, and in the backend it will be the another post to post the data to the database with a create methode
     const response = await fetch('/api/reviews', {
@@ -19,6 +17,6 @@ async function signupFormHandler(event) {
     } else {
       alert(response.statusText);
     }
-
-  };
-
+  }
+}
+document.getElementById('submit-review').addEventListener('click', signupFormHandler)

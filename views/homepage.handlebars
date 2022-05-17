@@ -1,4 +1,4 @@
-  <header class="header">
+<header class="header">
       <div class="flex">
         {{!-- <select name="" id="">
           <option disabled selected>Select Here</option>
@@ -43,21 +43,17 @@
         <ul class="ul" id="add-list"></ul>
         <a href="#" class="btn" id="btn">Checkout here</a>
       </div>
-      
-    </header>   
-
-    <!--home section starts-->
+   </header>
+   <!--home section starts-->
     <section class="home" id="home">
       <div class="content">
-        <h3>coffees from around the world</h3>
-        <p>We have traveled the world, and curated the best offerings from countries around the globe.
-          The coffees available are rotational by nature, since we are always on the lookout for new tastes, and experiences.</p>
-        <a href="" class="btn">get yours now</a>   
+        <h3>fresh coffe in the morning</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Adipisci possimus, ratione debitis officia soluta laudantium?</p>
+        <a href="" class="btn">get yours now</a>
       </div>
     </section>
-      <!--home section ends-->
-
-
+     <!--home section ends-->
     <!--about section starts-->
       <section class="about" id="about">
         <h1 class="heading"><span>About</span>Us</h1>
@@ -194,7 +190,7 @@
       <div class="container">
         <div class="">
           <button type="submit" class="random-btn-add">Add Your review</button>
-          <button class="random-btn-see">See all Reviews</button>
+           <button class="random-btn-see">See all Reviews</button>
         </div>
         <form class="form-review">
             <div class="form-group">
@@ -202,36 +198,32 @@
               <textarea class="form-control" id="Textarea1" rows="5"></textarea>
               <button  class="btn btn-primary mb-2 text-dark" id="submit-review">Submit Your Review</button>
             </div>
-        </form>        
+        </form>
       </div>
     </main>
      <div class="row first-row">
-        {{#each reviewsdata}}  
+        {{#each reviewsdata}}
         <div class="col col-lg-3 col-sm-12">
           <article class="reviews">
             <div class="reviews-context">
               <img src="/images/about-img.jpeg" alt="" style="width:30px; height:30px;">
               <h2 id="author">{{user.username}}</h2>
             </div>
-            
-            <p class="reviews-first-p" id="job">   
-              {{review_text}} 
+            <p class="reviews-first-p" id="job">
+              {{review_text}}
             </p>
-
             <p class="review-time">
               created {{created_at}}
-            </p>  
+            </p>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>            
+              <i class="fas fa-star-half-alt"></i>
           </article>
         </div>
         {{/each}}
       </div>
-
     <script src="/javascript/index.js" ></script>
     <script src="/javascript/logout.js"></script>
     <script src="/javascript/review-page.js"></script>
-  

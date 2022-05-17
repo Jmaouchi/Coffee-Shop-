@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Review } = require('../../models')
+
 // get all users
 router.get('/', (req, res) => {
     console.log('======================');
@@ -24,8 +25,7 @@ router.get('/', (req, res) => {
         });
 });
 
-
-router.get('/:id', (req, res) => { 
+router.get('/:id', (req, res) => {
   // this will give us a sigle data object from the user table, where the id is = to the req.params.id
   Review.findOne({
     where: {
@@ -59,7 +59,7 @@ router.get('/:id', (req, res) => {
 
 // post a new review
 router.post('/', (req, res) => {
-  // in a post its always a create method that we need to use 
+  // in a post its always a create method that we need to use
   Review.create({
     review_text: req.body.review_text,
     user_id: req.session.user_id
@@ -71,15 +71,10 @@ router.post('/', (req, res) => {
   });
 });
 
-
-
 // delete a review
 router.delete('/:id', (req, res) => {
-
   Review.destroy({
-    
     where:{id: req.params.id}
-
   })
     .then(dbUserData => {
       if(!dbUserData){
@@ -93,5 +88,4 @@ router.delete('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
 module.exports = router;
