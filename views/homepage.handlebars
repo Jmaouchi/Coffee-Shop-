@@ -221,32 +221,45 @@
       <div class="container">
 
         <div class="">
-          <button class="random-btn-add">Add Your review</button>
+          <button type="submit" class="random-btn-add">Add Your review</button>
            <button class="random-btn-see">See all Reviews</button>
         </div>
         <form class="form-review">
             <div class="form-group">
               <label for="exampleFormControlTextarea1" class="display-4">Please Add Your Review</label>
               <textarea class="form-control" id="Textarea1" rows="5"></textarea>
-              <button type="submit" class="btn btn-primary mb-2 text-dark">Submit Your Review</button>
+              <button  class="btn btn-primary mb-2 text-dark" id="submit-review">Submit Your Review</button>
             </div>
-        </form>
-
-        <div class="row first-row">       
-          <div class="col">
-            <article class="reviews">
-              <h2 id=  "author">author name</h2>
-              <p class="reviews-first-p" id="job">   
-                author comment will go here <span> and created at Created at </span>
-              </p>              
-            </article>
-          </div>
-        </div>
-        
+        </form>        
       </div>
-
     </main>
+     <div class="row first-row">
+        {{#each reviewsdata}}  
+        <div class="col col-lg-3 col-sm-12">
+          <article class="reviews">
+            <div class="reviews-context">
+              <img src="/images/about-img.jpeg" alt="" style="width:30px; height:30px;">
+              <h2 id="author">{{user.username}}</h2>
+            </div>
+            
+            <p class="reviews-first-p" id="job">   
+              {{review_text}} 
+            </p>
+
+            <p class="review-time">
+              created {{created_at}}
+            </p>  
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>            
+          </article>
+        </div>
+        {{/each}}
+      </div>
 
     <script src="/javascript/index.js" ></script>
     <script src="/javascript/logout.js"></script>
+    <script src="/javascript/review-page.js"></script>
   
