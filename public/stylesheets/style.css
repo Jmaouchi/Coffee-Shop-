@@ -728,6 +728,13 @@ form label {
   .header {
     padding: 1.5rem 2rem;
   }
+
+  .products .box-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -790,8 +797,11 @@ form label {
     display: block;
   }
   /*products*/
-  .Products .box-container {
-    display: block;
+  .products .box-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: center;
   }
 }
 
@@ -812,7 +822,12 @@ html{
   padding: 15px;
 }
 
-
+.products .box-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
 
 section .create-h3{
   display: flex;
