@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models')
+const { User } = require('../../models');
 
 
 // send all the data using this api endpoint, and exclude the password from the response 
