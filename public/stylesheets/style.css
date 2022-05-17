@@ -332,6 +332,7 @@ header .cart-items-container #add-list li .delete {
   text-align: center;
 }
 
+
 .about .row .content p{
   font-size: 1.6rem;
   padding: 1rem 0;
@@ -496,7 +497,7 @@ main .container{
   padding: 35px;
 }
 
-.container  article{
+  article{
   max-width: 600px;
   box-shadow:  0 5px 15px rgba(241, 206, 2, 0.3);
   margin: 0 auto;
@@ -515,16 +516,33 @@ main .container{
   margin-top: 50px;
 }
 
+.first-row article .reviews-first-p{
+  color: #ccc;
+  font-size: 20px;
+}
+
+.review-time{
+  font-size: 13px;
+  color: rgb(111, 108, 108);
+  
+}
+
+
+.fa-star{
+  color: orange;
+}
+
+.reviews .col{
+  margin: 10px;
+  border: 1px solid white;
+}
+
+
 .reviews h2{
   font-size: 25px;
   color: white;
   font-weight: bold;
   margin: 25px;
-}
-
-.reviews .reviews-first-p{
-  color: orange;
-  font-size: 20px;
 }
 
 .reviews .reviews-second-p{
@@ -563,13 +581,28 @@ main .container{
 }
 
 .first-row.active{
-  display: inline;
+  display:flex;
+}
+
+.first-row.active .col{
+  border: 1px solid white;
+  background-color: #212529;
+  color: black;
+  padding: 10px;
 }
 
 .review-label{
   font-size: 25px;
   margin-top: 20px;
 }
+
+.reviews-context{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 .form-group{
   margin-top: 30px;
@@ -604,6 +637,7 @@ section{
   margin: 5px;
   border: 1px solid var(--main-color);
 }
+
 
 #col-1{
   width: 100%;

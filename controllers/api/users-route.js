@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models')
+const { User, review } = require('../../models')
 
 
 // send all the data using this api endpoint, and exclude the password from the response 
@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
       where: {
-         id: req.params.id
+          id: req.params.id
       },
     })
     .then(dbUserData => {
