@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { DataTypes } = require('sequelize/types');
+// const { DataTypes } = require('sequelize/types');
 const { User, Items } = require("../../models/");
 
 
 // Get all items
 router.get('/', async, (req, res) => {
-    post.findAll({
+    Items.findAll({
 
         attributes: ['id', 'item_name', 'item_price', 'item_stock']
 
@@ -19,7 +19,7 @@ router.get('/', async, (req, res) => {
 
 // Get one item by its ID
 router.get('/:id', (req, res) => {
-    post.findOne({
+    Items.findOne({
 
         where: {
             id: req.params.id
