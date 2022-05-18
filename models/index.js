@@ -20,7 +20,11 @@ Items.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-Item.hasMany(Review, {
+Items.hasMany(Review, {
+    foreignKey: 'item.id'
+});
+
+Review.belongsTo(Items, {
     foreignKey: 'item.id'
 });
 

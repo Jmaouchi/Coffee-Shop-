@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { DataTypes } = require('sequelize/types');
 const { User, Items } = require("../../models/");
 
 
@@ -40,19 +41,25 @@ router.get('/:id', (req, res) => {
 
 
 // Add an item to the store
-router.post('./Items', (req, res) => {
+router.post('/Items', (req, res) => {
 
-    try {
+    Items.create({
 
-    const newItem = new Items({
-        ...req.body,
-        owner: req.user._id
+        item_name: req.body.item_name,
+        item_price: req.body.item_price,
+        item_stock: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'items',
+                key: 'item_stock'
+            }
+        }
+    })
+    .then(dbItemData = res.json(dbItemData))
+    .catch(err -< {
+        console.log(err);
+        res.status(500).json(err);
     });
-    await newItem.save()
-    res.status(201).send(newIteem)
-    } catch (error) {
-        res.status(400).send({ message: 'error' });
-    }
 });
 
 module.exports = router;
