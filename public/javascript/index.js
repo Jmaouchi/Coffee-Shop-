@@ -26,7 +26,7 @@ document.querySelector('#search-btn').onclick = () =>{
 
 
 document.querySelector('#cart-btn').onclick = () =>{
-// when you click on the  card items btn, then the search form and the menu btn wont be displayed 
+// when you click on the  card items btn, then the search form and the menu btn wont be displayed
   cartItem.classList.toggle('active');
   navbar.classList.remove('active');
   searchForm.classList.remove('active');

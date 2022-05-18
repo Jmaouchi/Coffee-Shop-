@@ -1,7 +1,7 @@
 // create a connection to database
 const Sequelize = require('sequelize');
 
-// use dotenv to hide the database name,  username and password 
+// use dotenv to hide the database name,  username and password
 require('dotenv').config();
 
 let sequelize;

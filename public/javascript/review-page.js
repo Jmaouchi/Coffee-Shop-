@@ -13,10 +13,10 @@ async function signupFormHandler(event) {
     });
     if (response.ok) {
       // after the account is been created, reffer them to another page
-      document.location.replace('/')
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
   }
 }
-document.getElementById('submit-review').addEventListener('click', signupFormHandler)
+document.getElementById('submit-review').addEventListener('click', signupFormHandler);
