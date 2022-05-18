@@ -62,4 +62,22 @@ router.post('/Items', (req, res) => {
     });
 });
 
+router.delete('/:id', (req, res) => {
+    Items.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbItemData => {
+        if (!dbItemData) {
+            res.status(404).json({ message: 'No item exists with that ID, try again.' });
+            return;
+        }
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 module.exports = router;
