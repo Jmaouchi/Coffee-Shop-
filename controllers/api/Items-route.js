@@ -7,13 +7,13 @@ const { User, Items } = require("../../models/");
 router.get('/', async, (req, res) => {
     Items.findAll({
 
-        attributes: ['id', 'item_name', 'item_price', 'item_stock']
+    attributes: ['id', 'item_name', 'item_price', 'item_stock']
 
-    })
+  })
     .then(dbItemData => res.json(dbItemData))
     .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
@@ -21,21 +21,21 @@ router.get('/', async, (req, res) => {
 router.get('/:id', (req, res) => {
     Items.findOne({
 
-        where: {
-            id: req.params.id
-        },
-        attributes: ['id', 'item_name', 'item_price', 'item_stock']
-    })
+    where: {
+      id: req.params.id
+    },
+    attributes: ['id', 'item_name', 'item_price', 'item_stock']
+  })
     .then(dbItemData => {
-        if (!dbItemData) {
-            res.status(404).json({ message: 'No item exists with that ID, try again.' });
-            return;
-        }
-        res.json(dbItemData);
+      if (!dbItemData) {
+        res.status(404).json({ message: 'No item exists with that ID, try again.' });
+        return;
+      }
+      res.json(dbItemData);
     })
     .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 
@@ -43,18 +43,18 @@ router.get('/:id', (req, res) => {
 // Add an item to the store
 router.post('/Items', (req, res) => {
 
-    Items.create({
+  Items.create({
 
-        item_name: req.body.item_name,
-        item_price: req.body.item_price,
-        item_stock: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'items',
-                key: 'item_stock'
-            }
-        }
-    })
+    item_name: req.body.item_name,
+    item_price: req.body.item_price,
+    item_stock: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'items',
+        key: 'item_stock'
+      }
+    }
+  })
     .then(dbItemData = res.json(dbItemData))
     .catch(err => {
         console.log(err);
@@ -63,20 +63,20 @@ router.post('/Items', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    Items.destroy({
-        where: {
-            id: req.params.id
-        }
-    })
+  Items.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
     .then(dbItemData => {
-        if (!dbItemData) {
-            res.status(404).json({ message: 'No item exists with that ID, try again.' });
-            return;
-        }
+      if (!dbItemData) {
+        res.status(404).json({ message: 'No item exists with that ID, try again.' });
+        return;
+      }
     })
     .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
+      console.log(err);
+      res.status(500).json(err);
     });
 });
 

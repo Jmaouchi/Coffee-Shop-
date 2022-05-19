@@ -1,6 +1,6 @@
 const express = require('express');
 // const routes = require('./controllers');
-const routes = require('./controllers')
+const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const path = require('path');
 
@@ -27,20 +27,20 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
   secret: process.env.DB_SECRET,
-  cookie: {}, // add maxAge: 900000  inside the cookies, to add a timer 
+  cookie: {}, // add maxAge: 900000  inside the cookies, to add a timer
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
     db: sequelize
   })
 };
-// use sessions 
+// use sessions
 app.use(session(sess));
 
 // use routes
 app.use(routes);
 
-// turn on connection to db and server // and force to true means that This allows the table to be overwritten and re-created 
+// turn on connection to db and server // and force to true means that This allows the table to be overwritten and re-created
 //if there is any changes
 sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log('Now listening on port 3001 !'));
