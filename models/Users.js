@@ -42,7 +42,7 @@ User.init(
   {
     // create hooks for to hash the password befor sending it to the database
     hooks: {
-      // set up beforeCreate lifecycle "hook" functionality, to hash the password, while a user try to signup 
+      // set up beforeCreate lifecycle "hook" functionality, to hash the password, while a user try to signup
       async beforeCreate(newUserData) {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
@@ -58,7 +58,7 @@ User.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user'
+    modelName: 'users'
   }
 );
 
