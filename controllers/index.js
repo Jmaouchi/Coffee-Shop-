@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-//get all the routes from the api folder 
+//get all the routes from the api folder
 const apiRoutes = require('./api');
 const htmlRoutes = require('./home-routes');
 const loginRoutes = require('./login-route');

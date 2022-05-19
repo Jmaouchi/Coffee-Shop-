@@ -718,6 +718,21 @@ form label {
   border-radius: 5px;
 }
 
+/* loader */
+.spinner-wrapper{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-image:url(/images/loader.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 /*media quary*/
 
 @media (max-width: 991px) {
@@ -840,5 +855,4 @@ section .create-h3{
   margin-bottom: 35px;
   font-size: 25px;
 }
-
 }
