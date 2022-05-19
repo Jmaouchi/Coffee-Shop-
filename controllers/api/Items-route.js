@@ -56,7 +56,7 @@ router.post('/Items', (req, res) => {
         }
     })
     .then(dbItemData = res.json(dbItemData))
-    .catch(err -< {
+    .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
