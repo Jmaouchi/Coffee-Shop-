@@ -20,9 +20,9 @@ Items.init(
       type: DataTypes.DECIMAL,
       allowNull: false
     },
-    item_stock: {
-      type: DataTypes.INTEGER,
-      allowNull: true
+    item_image: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     user_id: {
       type: DataTypes.INTEGER,
