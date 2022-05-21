@@ -4,8 +4,6 @@ async function newItemHandlerOne(event) {
   const item_name = document.querySelector('.heading-1').textContent;
   const item_price = document.querySelector('.price-1').textContent;
   const item_image = '/images/cart-item-1.png';
-  console.log(item_image);
-
 
   const response = await fetch('/api/items', {
     method: 'POST',
@@ -25,7 +23,6 @@ async function newItemHandlerOne(event) {
     alert(response.statusText);
   }
 }
-
 
 
 // second button listener
@@ -109,7 +106,6 @@ async function newItemHandlerFour(event) {
 }
 
 
-
 // fifth button listener
 async function newItemHandlerFifth(event) {
   event.preventDefault();
@@ -137,7 +133,7 @@ async function newItemHandlerFifth(event) {
 }
 
 
-
+// 6th button listener
 async function newItemHandlerSix(event) {
   event.preventDefault();
   const item_name = document.querySelector('.heading-6').textContent;
@@ -162,11 +158,11 @@ async function newItemHandlerSix(event) {
     alert(response.statusText);
   }
 }
+
+
 document.querySelector('.new-item-form-1').addEventListener('click', newItemHandlerOne);
 document.querySelector('.new-item-form-2').addEventListener('click', newItemHandlerTwo);
 document.querySelector('.new-item-form-3').addEventListener('click', newItemHandlerThree);
 document.querySelector('.new-item-form-4').addEventListener('click', newItemHandlerFour);
 document.querySelector('.new-item-form-5').addEventListener('click', newItemHandlerFifth);
 document.querySelector('.new-item-form-6').addEventListener('click', newItemHandlerSix);
-
-// shopping.addEventListener('click', showItems);

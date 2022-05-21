@@ -1,5 +1,5 @@
 // in this case, we also have a method that will save the session.
-async function signupFormHandler(event) {
+async function addReviews(event) {
   event.preventDefault();
   const review_text = document.querySelector('#Textarea1').value.trim();
   if (review_text) {
@@ -19,4 +19,4 @@ async function signupFormHandler(event) {
     }
   }
 }
-document.getElementById('submit-review').addEventListener('click', signupFormHandler);
+document.getElementById('submit-review').addEventListener('click', addReviews);

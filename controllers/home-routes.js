@@ -34,7 +34,7 @@ router.get('/items',withAuth, (req, res) => {
   console.log('======================');
   Items.findAll({
     attributes: [
-      'id', 'item_name', 'item_price', 'item_image', 'user_id'
+      'id', 'item_name', 'item_price', 'item_image'
     ],
     include: [
       {
@@ -45,7 +45,7 @@ router.get('/items',withAuth, (req, res) => {
   })
     .then(items => {
       const itemsData = items.map(item => item.get({ plain: true }));
-      res.render('homepage', { itemsData });
+      res.render('homepage', { itemsData, loggedIn:true });
     })
     .catch(err => {
       console.log(err);

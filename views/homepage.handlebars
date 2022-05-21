@@ -37,16 +37,18 @@
       {{!-- Kevin! this is where the items will go, you just need to change the cart item h3 and the price with the exact data --}}
       {{!-- and you need to add the #each method to display all the items that are selected  --}}
       <div class="cart-items-container" id="cart-items-container">
-        {{#each itemsData}}
+        {{#if loggedIn}}
+        {{#each itemsData as |item|}}
         <div class="cart-item" id="cart-item item-one">
-          <img  src="{{item_image}}" alt="">
+          <img  src="{{item.item_image}}" alt="">
           <div class="content">
-            <h3>{{item_name}}</h3>
-            <div class="price">${{item_price}}</div>
+            <h3>{{item.item_name}}</h3>
+            <div class="price">${{item.item_price}}</div>
           </div>
           <span class="fas fa-times"></span>
         </div>
         {{/each}}
+        {{/if}}
         <ul class="ul" id="add-list"></ul>
         <a href="#" class="btn" id="btn">Checkout here</a>
       </div>
