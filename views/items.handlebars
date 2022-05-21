@@ -1,0 +1,58 @@
+{{!-- set a loader while it's loading the html --}}
+<div class='spinner-wrapper'>
+  <div class="spinner"></div>
+</div> 
+
+<header class="header">
+      <div class="flex">
+        {{!-- <select name="" id="">
+          <option disabled selected>Select Here</option>
+          <option value="Delete">Delete account</option>
+        </select> --}}
+        <a href="#" class="logo">
+          <img src="/images/logo.png" alt="">
+        </a>
+        <div class="logout" id="logout">
+          <p>logout</p>
+        </div>
+      </div>
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#products">Products</a>
+        <a href="#reviews">reviews</a>
+        <a href="#contacts">Contacts</a>
+        <a href="#blogs">blogs</a>
+      </nav>
+      <div class="icons">
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="fas fa-bars" id="menu-btn"></div>
+      </div>
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+      </div>
+      {{!-- Kevin! this is where the items will go, you just need to change the cart item h3 and the price with the exact data --}}
+      {{!-- and you need to add the #each method to display all the items that are selected  --}}
+      <div class="cart-items-container" id="cart-items-container">
+        {{#each itemsData}}
+        <div class="cart-item" id="cart-item item-one">
+          <img src="/images/cart-item-1.png" alt="">
+          <div class="content">
+            <h3>{{item_name}}</h3>
+            <div class="price">$15.99</div>
+          </div>
+          <span class="fas fa-times" ></span>
+        </div>
+        {{/each}}
+        <ul class="ul" id="add-list"></ul>
+        <a href="#" class="btn" id="btn">Checkout here</a>
+      </div>
+   </header>
+    <script src="/javascript/index.js" ></script>
+    <script src="/javascript/logout.js"></script>
+    <script src="/javascript/review-page.js"></script>
+    <script src="/javascript/spinner.js"></script>
+    <script src="/javascript/add-items.js"></script>

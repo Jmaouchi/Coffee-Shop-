@@ -1,9 +1,14 @@
+// const shopping = document.querySelector('.fa-shopping-cart');
+
+// function showItems () {
+//   document.location.replace('/here');
+// }
 
 async function newItemHandler(event) {
   event.preventDefault();
   const item_name = document.querySelector('.heading-1').textContent;
   const item_price = document.querySelector('.price-1').textContent;
-  const item_image = 'this is an image';
+  const item_image = '/images/cart-item-1.png';
   console.log(item_image);
 
 
@@ -33,3 +38,4 @@ document.querySelector('.new-item-form-3').addEventListener('click', newItemHand
 document.querySelector('.new-item-form-4').addEventListener('click', newItemHandler);
 document.querySelector('.new-item-form-5').addEventListener('click', newItemHandler);
 document.querySelector('.new-item-form-6').addEventListener('click', newItemHandler);
+// shopping.addEventListener('click', showItems);

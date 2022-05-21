@@ -37,14 +37,16 @@
       {{!-- Kevin! this is where the items will go, you just need to change the cart item h3 and the price with the exact data --}}
       {{!-- and you need to add the #each method to display all the items that are selected  --}}
       <div class="cart-items-container" id="cart-items-container">
+        {{#each itemsData}}
         <div class="cart-item" id="cart-item item-one">
-          <img src="/images/cart-item-1.png" alt="">
+          <img src="{{item_image}}" alt="">
           <div class="content">
-            <h3>cart item 01</h3>
-            <div class="price">$15.99</div>
+            <h3>{{item_name}}</h3>
+            <div class="price">${{item_price}}</div>
           </div>
-          <span class="fas fa-times" ></span>
+          <span class="fas fa-times"></span>
         </div>
+        {{/each}}
         <ul class="ul" id="add-list"></ul>
         <a href="#" class="btn" id="btn">Checkout here</a>
       </div>
@@ -56,7 +58,7 @@
         <h3>coffees from around the world</h3>
         <p>We have traveled the world, and curated the best offerings from countries around the globe.
           The coffees available are rotational by nature, since we are always on the lookout for new tastes, and experiences.</p>
-        <a href="" class="btn">get yours now</a>   
+        <a href="#menu" class="btn">get yours now</a>   
       </div>
     </section>
     <!--home section ends-->
