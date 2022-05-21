@@ -42,6 +42,6 @@ app.use(routes);
 
 // turn on connection to db and server // and force to true means that This allows the table to be overwritten and re-created
 //if there is any changes
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening on port 3001 !'));
 });

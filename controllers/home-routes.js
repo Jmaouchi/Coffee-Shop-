@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Review } = require('../models');
+const { User, Review, Items } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/',withAuth, (req, res) => {
@@ -22,6 +22,30 @@ router.get('/',withAuth, (req, res) => {
       const reviewsdata = reviews.map(review => review.get({ plain: true }));
       console.log('review data is' , reviewsdata);
       res.render('homepage', { reviewsdata });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
+router.get('/items',withAuth, (req, res) => {
+  console.log('======================');
+  Items.findAll({
+    attributes: [
+      'id', 'item_name', 'item_price', 'item_image'
+    ],
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+    .then(items => {
+      const itemsData = items.map(item => item.get({ plain: true }));
+      res.render('homepage', { itemsData, loggedIn:true });
     })
     .catch(err => {
       console.log(err);
