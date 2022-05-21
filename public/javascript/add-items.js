@@ -1,10 +1,5 @@
-// const shopping = document.querySelector('.fa-shopping-cart');
-
-// function showItems () {
-//   document.location.replace('/here');
-// }
-
-async function newItemHandler(event) {
+// First button listener
+async function newItemHandlerOne(event) {
   event.preventDefault();
   const item_name = document.querySelector('.heading-1').textContent;
   const item_price = document.querySelector('.price-1').textContent;
@@ -25,17 +20,153 @@ async function newItemHandler(event) {
   });
 
   if (response.ok) {
-    document.location.replace('/');
+    document.location.replace('/items');
   } else {
     alert(response.statusText);
   }
-
 }
 
-document.querySelector('.new-item-form-1').addEventListener('click', newItemHandler);
-document.querySelector('.new-item-form-2').addEventListener('click', newItemHandler);
-document.querySelector('.new-item-form-3').addEventListener('click', newItemHandler);
-document.querySelector('.new-item-form-4').addEventListener('click', newItemHandler);
-document.querySelector('.new-item-form-5').addEventListener('click', newItemHandler);
-document.querySelector('.new-item-form-6').addEventListener('click', newItemHandler);
+
+
+// second button listener
+async function newItemHandlerTwo(event) {
+  event.preventDefault();
+  const item_name = document.querySelector('.heading-2').textContent;
+  const item_price = document.querySelector('.price-2').textContent;
+  const item_image = '/images/cart-item-2.png';
+  console.log(item_image);
+
+  const response = await fetch('/api/items', {
+    method: 'POST',
+    body: JSON.stringify({
+      item_name,
+      item_price,
+      item_image
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  if (response.ok) {
+    document.location.replace('/items');
+  } else {
+    alert(response.statusText);
+  }
+}
+
+
+// third button listener
+async function newItemHandlerThree(event) {
+  event.preventDefault();
+  const item_name = document.querySelector('.heading-3').textContent;
+  const item_price = document.querySelector('.price-3').textContent;
+  const item_image = '/images/cart-item-3.png';
+  console.log(item_image);
+
+  const response = await fetch('/api/items', {
+    method: 'POST',
+    body: JSON.stringify({
+      item_name,
+      item_price,
+      item_image
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  if (response.ok) {
+    document.location.replace('/items');
+  } else {
+    alert(response.statusText);
+  }
+}
+
+
+// fourth button listener
+async function newItemHandlerFour(event) {
+  event.preventDefault();
+  const item_name = document.querySelector('.heading-4').textContent;
+  const item_price = document.querySelector('.price-4').textContent;
+  const item_image = '/images/cart-item-4.png';
+  console.log(item_image);
+
+  const response = await fetch('/api/items', {
+    method: 'POST',
+    body: JSON.stringify({
+      item_name,
+      item_price,
+      item_image
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  if (response.ok) {
+    document.location.replace('/items');
+  } else {
+    alert(response.statusText);
+  }
+}
+
+
+
+// fifth button listener
+async function newItemHandlerFifth(event) {
+  event.preventDefault();
+  const item_name = document.querySelector('.heading-5').textContent;
+  const item_price = document.querySelector('.price-5').textContent;
+  const item_image = '/images/menu-1.png';
+  console.log(item_image);
+
+  const response = await fetch('/api/items', {
+    method: 'POST',
+    body: JSON.stringify({
+      item_name,
+      item_price,
+      item_image
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  } );
+  if (response.ok) {
+    document.location.replace('/items');
+  } else {
+    alert(response.statusText);
+  }
+}
+
+
+
+async function newItemHandlerSix(event) {
+  event.preventDefault();
+  const item_name = document.querySelector('.heading-6').textContent;
+  const item_price = document.querySelector('.price-6').textContent;
+  const item_image = '/images/images/menu-1.png';
+  console.log(item_image);
+
+  const response = await fetch('/api/items', {
+    method: 'POST',
+    body: JSON.stringify({
+      item_name,
+      item_price,
+      item_image
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  if (response.ok) {
+    document.location.replace('/items');
+  } else {
+    alert(response.statusText);
+  }
+}
+document.querySelector('.new-item-form-1').addEventListener('click', newItemHandlerOne);
+document.querySelector('.new-item-form-2').addEventListener('click', newItemHandlerTwo);
+document.querySelector('.new-item-form-3').addEventListener('click', newItemHandlerThree);
+document.querySelector('.new-item-form-4').addEventListener('click', newItemHandlerFour);
+document.querySelector('.new-item-form-5').addEventListener('click', newItemHandlerFifth);
+document.querySelector('.new-item-form-6').addEventListener('click', newItemHandlerSix);
+
 // shopping.addEventListener('click', showItems);

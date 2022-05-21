@@ -30,7 +30,7 @@ router.get('/',withAuth, (req, res) => {
 });
 
 
-router.get('/lo',withAuth, (req, res) => {
+router.get('/items',withAuth, (req, res) => {
   console.log('======================');
   Items.findAll({
     attributes: [
