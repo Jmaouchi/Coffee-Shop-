@@ -138,7 +138,7 @@ async function newItemHandlerSix(event) {
   event.preventDefault();
   const item_name = document.querySelector('.heading-6').textContent;
   const item_price = document.querySelector('.price-6').textContent;
-  const item_image = '/images/images/menu-1.png';
+  const item_image = '/images/menu-6.png';
   console.log(item_image);
 
   const response = await fetch('/api/items', {

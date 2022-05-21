@@ -363,11 +363,15 @@ header .cart-items-container #add-list li .delete {
   color: white;
   font-size: 2.5rem;
   padding: 5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu .box-container .box .price span {
   font-size: 1.5rem;
   text-decoration: line-through; /*that will make a line through the span*/
+  margin-left: 15px;
 }
 
 .menu .box-container .box:hover {
