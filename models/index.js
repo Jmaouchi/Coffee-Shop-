@@ -13,11 +13,13 @@ Review.belongsTo(User, {
 });
 
 User.hasMany(Items, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
 });
 
 Items.belongsTo(User, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
 });
 
 

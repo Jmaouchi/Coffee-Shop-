@@ -1,9 +1,11 @@
 
 async function newItemHandler(event) {
   event.preventDefault();
-  const item_name = document.querySelector('input[name="iten_name"]').value;
-  const item_price = document.querySelector('input[name="item_price"]').value;
-  const item_image = document.querySelector('[""]').value;
+  const item_name = document.querySelector('.heading-1').textContent;
+  const item_price = document.querySelector('.price-1').textContent;
+  const item_image = 'this is an image';
+  console.log(item_image);
+
 
   const response = await fetch('/api/items', {
     method: 'POST',

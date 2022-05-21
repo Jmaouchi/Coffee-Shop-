@@ -1,11 +1,17 @@
 const router = require('express').Router();
 // const { DataTypes } = require('sequelize/types');
-const { Items } = require('../../models/');
+const { Items, User } = require('../../models/');
 
 // Get all items
 router.get('/', (req, res) => {
   Items.findAll({
-    attributes: ['id', 'item_name', 'item_price', 'item_image', 'user_id']
+    attributes: ['id', 'item_name', 'item_price', 'item_image', 'user_id'],
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
   })
     .then(dbItemData => res.json(dbItemData))
     .catch(err => {
@@ -21,7 +27,13 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    attributes: ['id', 'item_name', 'item_price', 'item_image', 'user_id']
+    attributes: ['id', 'item_name', 'item_price', 'item_image', 'user_id'],
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
   })
     .then(dbItemData => {
       if (!dbItemData) {
@@ -43,7 +55,8 @@ router.post('/', (req, res) => {
   Items.create({
     item_name: req.body.item_name,
     item_price: req.body.item_price,
-    item_image: req.body.item_image
+    item_image: req.body.item_image,
+    user_id: req.session.user_id
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
