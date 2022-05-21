@@ -159,6 +159,18 @@ header .search-form label {
   color: var(--main-color);
 }
 
+.prices{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dollar-sign{
+  margin-left: 5px;
+  color: var(--main-color);
+}
+
+
 .header .cart-items-container {
   overflow: scroll;
   position: absolute;

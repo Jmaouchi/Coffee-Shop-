@@ -160,9 +160,94 @@ async function newItemHandlerSix(event) {
 }
 
 
+// 7th button listener
+async function newItemHandlerSeven(event) {
+  event.preventDefault();
+  const item_name = 'Nicaragua Whole Bean';
+  const item_price = document.querySelector('.price-7').textContent;
+  const item_image = '/images/product-1.png';
+
+  const response = await fetch('/api/items', {
+    method: 'POST',
+    body: JSON.stringify({
+      item_name,
+      item_price,
+      item_image
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  if (response.ok) {
+    document.location.replace('/items');
+  } else {
+    alert(response.statusText);
+  }
+}
+
+
+// 8th button listener
+async function newItemHandlerEight(event) {
+  event.preventDefault();
+  const item_name = 'Columbia Whole Bean';
+  const item_price = document.querySelector('.price-8').textContent;
+  const item_image = '/images/product-2.png';
+
+  const response = await fetch('/api/items', {
+    method: 'POST',
+    body: JSON.stringify({
+      item_name,
+      item_price,
+      item_image
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  if (response.ok) {
+    document.location.replace('/items');
+  } else {
+    alert(response.statusText);
+  }
+}
+
+
+// 9th button listener
+async function newItemHandlerNine(event) {
+  event.preventDefault();
+  const item_name = 'Peru Whole Bean';
+  const item_price = document.querySelector('.price-9').textContent;
+  const item_image = '/images/product-3.png';
+
+  const response = await fetch('/api/items', {
+    method: 'POST',
+    body: JSON.stringify({
+      item_name,
+      item_price,
+      item_image
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  if (response.ok) {
+    document.location.replace('/items');
+  } else {
+    alert(response.statusText);
+  }
+}
+
 document.querySelector('.new-item-form-1').addEventListener('click', newItemHandlerOne);
 document.querySelector('.new-item-form-2').addEventListener('click', newItemHandlerTwo);
 document.querySelector('.new-item-form-3').addEventListener('click', newItemHandlerThree);
 document.querySelector('.new-item-form-4').addEventListener('click', newItemHandlerFour);
 document.querySelector('.new-item-form-5').addEventListener('click', newItemHandlerFifth);
 document.querySelector('.new-item-form-6').addEventListener('click', newItemHandlerSix);
+document.querySelector('#add-to-card-1').addEventListener('click', newItemHandlerSeven);
+document.querySelector('#add-to-card-2').addEventListener('click', newItemHandlerEight);
+document.querySelector('#add-to-card-3').addEventListener('click', newItemHandlerNine);
+
+
+
+
+

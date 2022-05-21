@@ -53,6 +53,7 @@
         <a href="#" class="btn" id="btn">Checkout here</a>
       </div>
    </header>
+
    <!--home section starts-->
     <section class="home" id="home">
 
@@ -85,46 +86,55 @@
         <div class="cursor"></div>
       </section>
     <!--about section ends-->
+
+
     <!--menu section starts-->
     <section class="menu" id="menu">
       <h1 class="heading">Our <span>Menu</span></h1>
       <div class="box-container">
+
         <div class="box">
           <img src="/images/menu-1.png" alt="">
           <h3 class="heading-1">Organic Kona coffee from Hawai'i</h3>
-          <div class="price"><div class="price-1">62.99</div><span>110$</span></div>
+          <div class="price"><div class="price-1 prices">62.99 <div class="dollar-sign">$</div></div><span>110$</span></div>
           <a href="#" class="btn new-item-form-1" id="btn-1" >add to cart</a>
         </div>
+
         <div class="box">
           <img src="/images/menu-2.png" alt="">
           <h3 class="heading-2">Granell Wild coffee from Indonesia</h3>
-          <div class="price"><div class="price-2">108.99</div><span>120.99$</span></div>
+          <div class="price"><div class="price-2 prices">108.99 <div class="dollar-sign">$</div></div><span>120.99$</span></div>
           <a href="#"  class="btn new-item-form-2" id="btn-2">add to cart</a>
         </div>
+
         <div class="box">
           <img src="/images/menu-3.png" alt="">
           <h3 class="heading-3" >Leeroy Jenkins coffee from Guatemala</h3>
-          <div class="price"><div class="price-3">65.99</div><span>40.99$</span></div>
+          <div class="price"><div class="prices price-3">65.99 <div class="dollar-sign">$</div></div><span>40.99$</span></div>
           <a href="#" class="btn new-item-form-3">add to cart</a>
         </div>
+
         <div class="box">
           <img src="/images/menu-4.png" alt="">
           <h3 class="heading-4" >Jamaica Blue coffee from Jamaica</h3>
-          <div class="price"><div class="price-4">98.99</div><span>50.99$</span></div>
+          <div class="price"><div class="price-4 prices">98.99 <div class="dollar-sign">$</div></div><span>50.99$</span></div>
           <a href="#" class="btn new-item-form-4" id="btn-4">add to cart</a>
         </div>
+
         <div class="box">
           <img src="/images/menu-5.png" alt="">
           <h3 class="heading-5" >Nakayama Arabica coffee from Okinawa</h3>
-          <div class="price"><div class="price-5">175.99</div><span>90.99$</span></div>
+          <div class="price"><div class="price-5 prices">175.99 <div class="dollar-sign">$</div></div><span>90.99$</span></div>
           <a href="#" class="btn new-item-form-5" id="btn-5">add to cart</a>
         </div>
+
         <div class="box">
           <img src="/images/menu-6.png" alt="">
           <h3 class="heading-6" >Peaberry Arabica coffee from Brazil</h3>
-          <div class="price"><div class="price-6">155.99</div><span>115.99$</span></div>
+          <div class="price"><div class="price-6 prices">155.99 <div class="dollar-sign">$</div></div><span>115.99$</span></div>
           <a href="#" class="btn new-item-form-6" id="btn-6">add to cart</a>
         </div>
+
       </div>
     </section>
     <!--products section starts-->
@@ -133,9 +143,10 @@
     <section class="products" id="products">
       <h1 class="heading"><span>Our</span>Most popular products</h1>
       <div class="box-container">
+
         <div class="box">
           <div class="icons">
-            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="#" class="fas fa-shopping-cart" id="add-to-card-1"></a>
             <a href="#" class="fas fa-heart"></a>
             <a href="#" class="fas fa-eye"></a>
           </div>
@@ -151,12 +162,13 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star-half-alt"></i>
             </div>
-            <div class="price">$15.99</div>
+            <div class="price price-7">155.99</div>
           </div>
         </div>
+
         <div class="box">
           <div class="icons">
-            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="#" class="fas fa-shopping-cart" id="add-to-card-2"></a>
             <a href="#" class="fas fa-heart"></a>
             <a href="#" class="fas fa-eye"></a>
           </div>
@@ -172,12 +184,13 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star-half-alt"></i>
             </div>
-            <div class="price">$15.99</div>
+            <div class="price price-8">103.99</div>
           </div>
         </div>
+
         <div class="box">
           <div class="icons">
-            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="#" class="fas fa-shopping-cart" id="add-to-card-3"></a>
             <a href="#" class="fas fa-heart"></a>
             <a href="#" class="fas fa-eye"></a>
           </div>
@@ -193,11 +206,14 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star-half-alt"></i>
             </div>
-            <div class="price">$15.99</div>
+            <div class="price price-9">105.99</div>
           </div>
         </div>
+
       </div>
     </section>
+
+
     <!-- reviews section starts -->
     <main id="reviews" class="reviews">
       <h1 class="heading"><span>Our</span>Reviews</h1>
@@ -215,6 +231,7 @@
         </form>
       </div>
     </main>
+
     <div class="row first-row">
         {{#each reviewsdata}}
         <div class="col col-lg-3 col-sm-12">
@@ -238,6 +255,7 @@
         </div>
         {{/each}}
       </div>
+      
     <script src="/javascript/index.js" ></script>
     <script src="/javascript/logout.js"></script>
     <script src="/javascript/review-page.js"></script>
