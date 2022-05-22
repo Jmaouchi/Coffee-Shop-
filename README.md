@@ -156,7 +156,7 @@ SOFTWARE
 
   # Contact:
   
-  * If you have any questions, feel free to [email Jugurta!](djigo.maouchi@yahoo.com), or [email Kevin!](?) or [email Andres!](?)
+  * If you have any questions, feel free to [email Jugurta!](djigo.maouchi@yahoo.com), [Kevin!](?) or [Andres!](?)
 
 
   # Contribution:
