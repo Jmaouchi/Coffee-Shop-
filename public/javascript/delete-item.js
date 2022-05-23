@@ -13,7 +13,7 @@ async function deleteFormHandler(event) {
   });
 
   if (response.ok) {
-    document.location.replace('/');
+    document.location.replace('/items');
   } else {
     alert(response.statusText);
   }
