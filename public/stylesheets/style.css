@@ -854,6 +854,10 @@ html{
   padding: 15px;
 }
 
+.about .image img{
+  display: none;
+}
+
 .products .box-container {
   display: grid;
   grid-template-columns: 1fr;
