@@ -196,13 +196,15 @@ header .search-form label {
 .header .cart-items-container .cart-item .fa-times {
   /*that will make the X stay wherever place is givin to */
   margin-bottom: 20px;
-  font-size: 15px;
+  font-size: 20px;
   cursor: pointer;
-  color: var(--black);
+  color: red;
 }
 
 .header .cart-items-container .cart-item .fa-times:hover {
   color: var(--main-color);
+  transform: rotate(380deg);
+  transition: 1s;
 }
 
 .header .cart-items-container .cart-item img {
