@@ -1,7 +1,7 @@
 async function newItemHandler(event) {
     event.preventDefault();
 
-    const name = document.querySelector('input[name="iten_name"]').value;
+    const name = document.querySelector('input[name="item_name"]').value;
     const price = document.querySelector('input[name="item_price"]').value;
     const image = document.querySelector('[""]').value;
 
