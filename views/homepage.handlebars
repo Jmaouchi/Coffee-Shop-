@@ -246,11 +246,26 @@
             <p class="review-time">
               created {{created_at}}
             </p>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
+            <div class="status col-sm-12">
+              <div class="status-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <div class="status-comments">
+                <div class="status-comments-value-up">
+                  <div class="comments-up-value">100</div>
+                  <div class="status-comments-thumb"><i class="fa-solid fa-thumbs-up"></i></div>
+                </div>
+                <div class="status-comments-value-down">
+                  <div class="comments-down-value">100</div>
+                  <div class="status-comments-thumb"><i class="fa-solid fa-thumbs-down"></i></div>
+                </div>                  
+              </div>
+            </div>
+              
           </article>
         </div>
         {{/each}}

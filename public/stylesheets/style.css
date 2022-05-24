@@ -481,7 +481,7 @@ main .container {
   padding: 35px;
 }
 
-  article{
+article{
   max-width: 600px;
   box-shadow: 0 5px 15px rgba(241, 206, 2, 0.3);
   margin: 0 auto;
@@ -534,6 +534,67 @@ main .container {
   margin-top: 25px;
   font-size: 15px;
 }
+
+.status{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-comments{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-comments-value-up{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.status-comments-value-down{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.comments-up-value{
+  margin-top: 5px;
+  font-size: 15px;
+  color: green;
+  margin-right: 5px;
+}
+
+.comments-down-value{
+  font-size: 15px;
+  color: red;
+  margin-right: 5px;
+}
+
+.fa-thumbs-up{
+  font-size: 20px;
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+.fa-thumbs-up:hover{
+  color: green;
+}
+
+.fa-thumbs-down{
+  margin-top: 5px;
+  font-size: 20px;
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+.fa-thumbs-down:hover{
+  color: red;
+}
+
 
 .button-container {
   margin: 25px;
