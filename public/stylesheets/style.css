@@ -159,7 +159,20 @@ header .search-form label {
   color: var(--main-color);
 }
 
+.prices{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dollar-sign{
+  margin-left: 5px;
+  color: var(--main-color);
+}
+
+
 .header .cart-items-container {
+  overflow: scroll;
   position: absolute;
   top: 100%;
   right: -100%;
@@ -183,13 +196,15 @@ header .search-form label {
 .header .cart-items-container .cart-item .fa-times {
   /*that will make the X stay wherever place is givin to */
   margin-bottom: 20px;
-  font-size: 15px;
+  font-size: 20px;
   cursor: pointer;
-  color: var(--black);
+  color: red;
 }
 
 .header .cart-items-container .cart-item .fa-times:hover {
   color: var(--main-color);
+  transform: rotate(380deg);
+  transition: 1s;
 }
 
 .header .cart-items-container .cart-item img {
@@ -350,11 +365,15 @@ header .cart-items-container #add-list li .delete {
   color: white;
   font-size: 2.5rem;
   padding: 5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu .box-container .box .price span {
   font-size: 1.5rem;
   text-decoration: line-through; /*that will make a line through the span*/
+  margin-left: 15px;
 }
 
 .menu .box-container .box:hover {
@@ -462,7 +481,7 @@ main .container {
   padding: 35px;
 }
 
-  article{
+article{
   max-width: 600px;
   box-shadow: 0 5px 15px rgba(241, 206, 2, 0.3);
   margin: 0 auto;
@@ -515,6 +534,67 @@ main .container {
   margin-top: 25px;
   font-size: 15px;
 }
+
+.status{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-comments{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-comments-value-up{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.status-comments-value-down{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.comments-up-value{
+  margin-top: 5px;
+  font-size: 15px;
+  color: green;
+  margin-right: 5px;
+}
+
+.comments-down-value{
+  font-size: 15px;
+  color: red;
+  margin-right: 5px;
+}
+
+.fa-thumbs-up{
+  font-size: 20px;
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+.fa-thumbs-up:hover{
+  color: green;
+}
+
+.fa-thumbs-down{
+  margin-top: 5px;
+  font-size: 20px;
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+.fa-thumbs-down:hover{
+  color: red;
+}
+
 
 .button-container {
   margin: 25px;
@@ -835,6 +915,10 @@ html{
   width: 100%;
   margin-right: 20px;
   padding: 15px;
+}
+
+.about .image img{
+  display: none;
 }
 
 .products .box-container {

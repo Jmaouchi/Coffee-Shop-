@@ -5,27 +5,22 @@ const Items = require('./Items');
 
 // create associations
 User.hasMany(Review, {
-    foreignKey: 'user_id'
+  foreignKey: 'user_id'
 });
 Review.belongsTo(User, {
-    foreignKey: 'user_id',
-    onDelete: 'SET NULL'
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
 });
 
 User.hasMany(Items, {
-    foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
 });
 
 Items.belongsTo(User, {
-    foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  onDelete: 'SET NULL'
 });
 
-Items.hasMany(Review, {
-    foreignKey: 'item.id'
-});
-
-Review.belongsTo(Items, {
-    foreignKey: 'item.id'
-});
 
 module.exports = { User, Review, Items };

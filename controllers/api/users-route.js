@@ -110,11 +110,9 @@ router.post('/logout', (req, res) => {
       // the 204 response means that the session has successfully been destroyed.
       res.status(204).end();
     });
-  }
-  else {
+  }else {
     res.status(404).end();
   }
-
 });
 
 
@@ -123,7 +121,6 @@ router.post('/logout', (req, res) => {
 router.delete('/:id', (req, res) => {
   // in a post its always a create method that we need to use
   User.destroy({
-
     where:{id: req.params.id}
 
   })

@@ -1,14 +1,17 @@
 const router = require('express').Router();
 // const { DataTypes } = require('sequelize/types');
-const { User, Items } = require("../../models/");
-
+const { Items, User } = require('../../models/');
 
 // Get all items
-router.get('/', async, (req, res) => {
-    Items.findAll({
-
-    attributes: ['id', 'item_name', 'item_price', 'item_stock']
-
+router.get('/', (req, res) => {
+  Items.findAll({
+    attributes: ['id', 'item_name', 'item_price', 'item_image', 'user_id'],
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
   })
     .then(dbItemData => res.json(dbItemData))
     .catch(err => {
@@ -19,12 +22,18 @@ router.get('/', async, (req, res) => {
 
 // Get one item by its ID
 router.get('/:id', (req, res) => {
-    Items.findOne({
+  Items.findOne({
 
     where: {
       id: req.params.id
     },
-    attributes: ['id', 'item_name', 'item_price', 'item_stock']
+    attributes: ['id', 'item_name', 'item_price', 'item_image', 'user_id'],
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
   })
     .then(dbItemData => {
       if (!dbItemData) {
@@ -41,26 +50,27 @@ router.get('/:id', (req, res) => {
 
 
 // Add an item to the store
-router.post('/Items', (req, res) => {
-
+router.post('/', (req, res) => {
+  // in a post its always a create method that we need to use
   Items.create({
-
     item_name: req.body.item_name,
     item_price: req.body.item_price,
-    item_stock: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'items',
-        key: 'item_stock'
-      }
-    }
+    item_image: req.body.item_image,
+    user_id: req.session.user_id
   })
-    .then(dbItemData = res.json(dbItemData))
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+      res.json(dbPostData);
+    })
     .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
+      console.log(err);
+      res.status(500).json(err);
     });
 });
+
 
 router.delete('/:id', (req, res) => {
   Items.destroy({
