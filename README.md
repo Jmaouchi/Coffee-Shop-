@@ -141,17 +141,16 @@ SOFTWARE
 
   3. Used sequelize to make connection between database and server
 
-  4. Application is deployed on [heroku](https://floating-thicket-48902.herokuapp.com/) : Heroku is a container-based cloud Platform as a Service (PaaS). Developers use Heroku to deploy, manage, and scale modern apps.
+  4. Application is deployed on [heroku](https://coffee-from-the-world.herokuapp.com/) : Heroku is a container-based cloud Platform as a Service (PaaS). Developers use Heroku to deploy, manage, and scale modern apps.
 
 
 
   ## Shadow
-  ![](public/images/gif.gif)
+
 
 
   ## Link:  
-   
-  https://floating-thicket-48902.herokuapp.com/
+  https://coffee-from-the-world.herokuapp.com/
 
 
   # Contact:
