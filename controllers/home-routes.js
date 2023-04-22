@@ -44,7 +44,7 @@ router.get('/items',withAuth, (req, res) => {
     ]
   })
     .then(items => {
-      const itemsData = items.map(item => item.get({ plain: true }));
+      pets
       res.render('homepage', { itemsData, loggedIn:true });
     })
     .catch(err => {
